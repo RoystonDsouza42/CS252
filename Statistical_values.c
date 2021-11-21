@@ -10,13 +10,15 @@
 #include <pthread.h>
 
 //Global variables
-int n;
-int *arr;
+int n;    // variable for storing no of data elements passed on command line
+int *arr; // array for storing arguments from command line
 
 // average , minimum and maimum variables stored globally.
 float average;
 int minimum;
 int maximum;
+float median;
+float std_dev;
 
 //Thread1 for calculating average
 void *avg()
@@ -57,6 +59,64 @@ void *max()
     }
 }
 
+//Thread4 for calculating median value
+void *med()
+{
+    int i;
+    int j;
+    int temp;
+    int *tp = (int*) arr;
+
+    for(i=n-1;i>=1;i--)
+    {
+        bool idx = true;
+
+        for(j=1;j<=i;j++)
+        { 
+               if(tp[j-1] > tp[j])
+                {
+                    temp = tp[j];
+                    tp[j]= tp[j-1];
+                    tp[j-1]= temp;
+                }
+                    idx = false;
+                
+                if(idx)
+                    break;
+        }
+    }
+
+    // To calculate median
+    if( (n+1)%2 == 0) //for odd
+    {
+        median = tp[ ((n+1)/2) - 1 ];
+    }
+    else //for even
+    {
+        median =  (tp[ n/2 ]  +   tp[n/2 - 1]) / 2.0;
+    }
+
+    pthread_exit(NULL);
+}
+
+//Thread5 for calculating standard deviation
+void *standard()
+{
+    int i;
+    float var;
+    for(i=0; i<n ; i++)
+    {
+        var += pow(arr[i] - average,2);
+    }
+
+    var = var/n;
+
+    std_dev = sqrt(var);
+    
+    pthread_exit(NULL);
+}
+
+
 //main function
 void main(int argc, char *argv[])
 {
@@ -82,10 +142,12 @@ void main(int argc, char *argv[])
  
     printf("\n\n");
 
-    // Declaring three worker threads t1,t2,t3.
+    // Declaring three worker threads t1,t2,t3,t4,t5.
     pthread_t t1;
     pthread_t t2;
     pthread_t t3;
+    pthread_t t4;
+    pthread_t t5;
 
     //creating threads
     pthread_create(&t1,NULL,&avg,NULL);
@@ -96,6 +158,13 @@ void main(int argc, char *argv[])
 
     pthread_create(&t3,NULL,&max,NULL);
     pthread_join(t3,NULL);
+    
+    pthread_create(&t4,NULL,&med,NULL);
+    pthread_join(t4,NULL);
+
+    pthread_create(&t5,NULL,&standard,NULL);
+    pthread_join(t5,NULL);
+
 
     //main of the parent thread
     /*The parent thread will output the result once the workers
@@ -103,6 +172,8 @@ void main(int argc, char *argv[])
 
     printf("The average value is %f\n",average);
     printf("The minimum value is %d\n",minimum);
-    printf("The maximum value is %d\n",maximum);  
+    printf("The maximum value is %d\n",maximum);
+    printf("The median  value is %0.2f\n",median);    
+    printf("The standard deviation  value is %0.3f\n",std_dev); 
     printf("\n\n");
 }
