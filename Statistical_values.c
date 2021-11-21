@@ -13,7 +13,7 @@
 int n;    // variable for storing no of data elements passed on command line
 int *arr; // array for storing arguments from command line
 
-// average , minimum and maimum variables stored globally.
+// average , minimum, maximum, median and standard deviation (std_dev) variables stored globally.
 float average;
 int minimum;
 int maximum;
@@ -98,6 +98,7 @@ void *med()
 
     pthread_exit(NULL);
 }
+
 
 //Thread5 for calculating standard deviation
 void *standard()
