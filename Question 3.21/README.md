@@ -15,9 +15,13 @@ the wait() call to wait for the child process to complete before exiting the pro
 integer is passed on the command line.<p>
   
 ## Instructions
-  [] - source code for Collatz conjecture program
+[] - source code for Collatz conjecture program
   
-  #### Instructions to follow while compiling this code
-  Enter the following on the command line
-  1. ``` gcc Collatz.c -o collatz ```
+#### Instructions to follow while compiling this code
+Enter the following on the command line<br>
+1. ``` gcc Collatz_conjecture.c -o collatz ```
+  
+The starting number is provided on the command line:<br> 
+  
+2. ``` ./collatz {starting number} ```
   
