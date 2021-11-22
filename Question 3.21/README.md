@@ -15,7 +15,7 @@ the wait() call to wait for the child process to complete before exiting the pro
 integer is passed on the command line.<p>
   
 ## Instructions
-[] - source code for Collatz conjecture program
+[Collatz_conjecture.c](https://github.com/RoystonDsouza42/CS252/blob/main/Question%203.21/Collatz_conjecture.c) - source code for Collatz conjecture program
   
 #### Instructions to follow while compiling this code
 Enter the following on the command line<br>
@@ -24,4 +24,33 @@ Enter the following on the command line<br>
 The starting number is provided on the command line:<br> 
   
 2. ``` ./collatz {starting number} ```
+
+The result is display on the command line.
+  
+## Result
+#### The result for n = 35 is shown below:<br>
+  
+![result_35](https://user-images.githubusercontent.com/93470434/142906244-be28097a-d1e2-4c24-870b-2a718ea23a3b.png)
+
+#### The result for n = 18 is shown below:<br>
+  
+![result_18](https://user-images.githubusercontent.com/93470434/142906278-62484ea0-f656-4245-b654-9fba2b4a33fc.png)
+
+The following function calls are used:
+1.  ``` fork() ```
+    * Used to create a child process out of parent process.
+    * In parent it returns the process ID of the created process.
+    * In the child it returns 0; 
+    * Parent and child process executes concurrently.
+  
+2. ``` wait() ```
+    * Parent will wait for the child to complete.
+    * once child terminates, parent will continue execution.
+    
+   
+## References
+  * [https://www.section.io/engineering-education/fork-in-c-programming-language/](https://www.section.io/engineering-education/fork-in-c-programming-language/)
+  * [http://ucmassignments.blogspot.com/2016/06/a-collatz-conjecture-collatz-conjecture.html](http://ucmassignments.blogspot.com/2016/06/a-collatz-conjecture-collatz-conjecture.html)
+  
+
   
