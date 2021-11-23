@@ -65,3 +65,8 @@ The following thread fuctions and declarations were used:
  ## References
   * [https://www.homeworklib.com/qaa/1707080/write-in-c-program-write-a-multi-threaded-program](https://www.homeworklib.com/qaa/1707080/write-in-c-program-write-a-multi-threaded-program)
   * [https://www.ibm.com/docs/en/zos/2.2.0?topic=functions-pthread-create-create-thread](https://www.ibm.com/docs/en/zos/2.2.0?topic=functions-pthread-create-create-thread)
+
+Note: Code based on [www.homeworklib.com](https://www.homeworklib.com/qaa/1707080/write-in-c-program-write-a-multi-threaded-program). A array was created using dynamic memory allocation to store inputs obtained from command line, code to calculate median and standard deviation was added. Apart from this several other small modifications were made.
+
+## License
+No license was found on their website. The author does not intend any copyright infringement.
