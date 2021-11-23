@@ -33,6 +33,8 @@ void *avg()
         sum = sum + arr[i];
     }
     average = sum/n;
+    
+    pthread_exit(NULL);
 }
 
 //Thread2 for calculating minimum value
@@ -46,6 +48,8 @@ void *min()
         if (minimum > arr[i])
             minimum = arr[i];
     }
+    
+    pthread_exit(NULL);
 }
 
 //Thread3 for calculating maximum value
@@ -59,6 +63,8 @@ void *max()
         if (maximum < arr[i])
             maximum = arr[i];
     }
+    
+    pthread_exit(NULL);
 }
 
 //Thread4 for calculating median value
@@ -97,7 +103,7 @@ void *med()
     {
         median =  (tp[ n/2 ]  +   tp[n/2 - 1]) / 2.0;
     }
-
+    
     pthread_exit(NULL);
 }
 
