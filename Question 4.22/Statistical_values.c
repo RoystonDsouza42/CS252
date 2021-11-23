@@ -8,6 +8,8 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <pthread.h>
+#include<stdbool.h>
+#include<math.h>
 
 //Global variables
 int n;    // variable for storing no of data elements passed on command line
