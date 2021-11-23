@@ -49,8 +49,8 @@ The following function calls are used:
     
    
 ## References
-  * [https://www.section.io/engineering-education/fork-in-c-programming-language/](https://www.section.io/engineering-education/fork-in-c-programming-language/)
   * [http://ucmassignments.blogspot.com/2016/06/a-collatz-conjecture-collatz-conjecture.html](http://ucmassignments.blogspot.com/2016/06/a-collatz-conjecture-collatz-conjecture.html)
+   * [https://www.section.io/engineering-education/fork-in-c-programming-language/](https://www.section.io/engineering-education/fork-in-c-programming-language/)
   
 
   
