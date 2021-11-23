@@ -31,3 +31,13 @@ The data is then provided on the command line:<br>
 2. ``` ./stats {data... } ```
 
 The result: maximum, minimum, average, median and standard deviation is display on the command line.
+  
+## Results
+  The statistical values obtained are displayed below
+  
+  #### 1. For odd number of data elements 
+  ![result_stat1](https://user-images.githubusercontent.com/93470434/142973112-e2c2c0e0-6ccd-457c-83a2-5939e0f6d916.png)
+  
+  #### 2. For even number of data elements
+  ![result_stat2](https://user-images.githubusercontent.com/93470434/142973728-d2c0b030-4315-4e9f-bec5-47d65709b55f.png)
+
