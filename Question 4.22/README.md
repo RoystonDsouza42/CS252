@@ -56,4 +56,12 @@ The following thread fuctions and declarations were used:
   
   3. ```  void pthread_exit(void *status); ```
       * Used to terminate a thread.
-      * example : pthread_exit(NULL);
+      * example : `pthread_exit(NULL);`
+  
+  4. ``` int pthread_join(pthread_t thread, void **status); ```
+      * Used to wait for the termination of a thread
+      * example : `pthread_join(t1,NULL);`
+
+ ## References
+  * [https://www.homeworklib.com/qaa/1707080/write-in-c-program-write-a-multi-threaded-program](https://www.homeworklib.com/qaa/1707080/write-in-c-program-write-a-multi-threaded-program)
+  * [https://www.ibm.com/docs/en/zos/2.2.0?topic=functions-pthread-create-create-thread](https://www.ibm.com/docs/en/zos/2.2.0?topic=functions-pthread-create-create-thread)
